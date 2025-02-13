@@ -8,4 +8,7 @@ fun main() {
     println(integersDoubled)
     val listOfNames = listOf("Alice", "Bob", "Amir", "Charlie", "Annie", "David")
     println(filterNames(listOfNames, {it.first() == 'A'}))
+    val listOfWords = listOf("apple", "banana", "kiwi", "strawberry", "grape")
+    val descendingOrder = listOfWords.sortedByDescending { it.length }
+    println(descendingOrder)
 }
