@@ -2,6 +2,14 @@ fun filterNames(list: List<String>, isTrue: (String) -> Boolean): List<String> {
     return list.filter(isTrue)
 }
 
+fun customFilter(numbers: List<Int>, filter: (Int) -> Boolean): List<Int> {
+    return numbers.filter(filter)
+}
+
+fun processNumbers(numbers: List<Int>): List<Int> {
+    return numbers.filter { it % 2 != 0 }.map { it * it }
+}
+
 fun main() {
     val integers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     val integersDoubled = integers.map { it * 2 }
@@ -11,4 +19,8 @@ fun main() {
     val listOfWords = listOf("apple", "banana", "kiwi", "strawberry", "grape")
     val descendingOrder = listOfWords.sortedByDescending { it.length }
     println(descendingOrder)
+    println(customFilter(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) { it > 5 })
+    println(customFilter(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) { it % 2 == 0 })
+    println(customFilter(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) { it % 3 == 0 })
+    println(processNumbers(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)))
 }
